@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amada Johana ❤️</title>
+    <style>
+        /* Estilos generales del cuerpo */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Fondo negro puro */
+            color: #fff;
+            font-family: 'Montserrat', sans-serif; /* Fuente moderna y elegante */
+            overflow: hidden; /* Evita barras de desplazamiento */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Contenedor principal para centrar el contenido */
+        .contenedor {
+            text-align: center;
+            z-index: 10; /* Asegura que el contenido esté sobre las partículas */
+            position: relative;
+        }
+
+        /* Título superior "Te Amo Muchote" */
+        h1 {
+            font-size: 2em;
+            color: #ff3399; /* Rosa vibrante */
+            text-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out; /* Animación de aparición */
+        }
+
+        /* Estilo para el nombre Johana con efecto neón y latido */
+        .nombre-central {
+            font-size: 6em; /* Tamaño grande para el nombre */
+            font-weight: 900; /* Negrita extra */
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            color: #ffffff; /* Blanco para el texto */
+            text-shadow: 
+                0 0 15px #ff007f, /* Rosa fuerte */
+                0 0 30px #ff007f,
+                0 0 50px #ff007f,
+                0 0 80px #ff007f,
+                0 0 120px #ff007f;
+            animation: latido 1.8s infinite ease-in-out, brilloNeón 2s infinite alternate; /* Latido y brillo */
+            position: relative;
+            display: inline-block; /* Para que las coronas se alineen */
+        }
+
+        /* Coronas decorativas alrededor del nombre */
+        .nombre-central::before, .nombre-central::after {
+            content: '👑';
+            font-size: 0.5em; /* Tamaño relativo al nombre */
+            vertical-align: middle;
+            margin: 0 15px;
+            opacity: 0.9;
+            animation: flotarCorona 3s infinite alternate; /* Animación sutil de flotar */
+        }
+        .nombre-central::before { transform: rotate(-10deg); }
+        .nombre-central::after { transform: rotate(10deg); }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); } /* Latido un poco más grande */
+        }
+
+        @keyframes brilloNeón {
+            0% { text-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f; }
+            100% { text-shadow: 0 0 25px #ff007f, 0 0 45px #ff007f, 0 0 70px #ff007f; }
+        }
+
+        @keyframes flotarCorona {
+            0% { transform: translateY(0px) rotate(10deg); }
+            100% { transform: translateY(-5px) rotate(-10deg); }
+        }
+
+        /* Partículas de fondo (estrellas) */
+        .particula {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none; /* Ignorar eventos del ratón */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            animation: moverParticula linear infinite;
+        }
+
+        @keyframes moverParticula {
+            0% { transform: translateY(100vh); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+
+        /* Corazones flotantes */
+        .corazon-flotante {
+            position: absolute;
+            font-size: 2em;
+            color: #ff007f; /* Color rosa de los corazones */
+            pointer-events: none;
+            opacity: 0;
+            animation: subirCorazon linear infinite;
+            text-shadow: 0 0 5px #ff007f;
+        }
+
+        @keyframes subirCorazon {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 0.8; transform: scale(1); }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        /* Botón de música */
+        #musicaBtn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            z-index: 20;
+            box-shadow: 0 0 15px #ff007f;
+            transition: transform 0.3s ease;
+        }
+
+        #musicaBtn:hover {
+            transform: scale(1.05);
+        }
+
+        #musicaBtn.paused::before {
+            content: '🎵 ▶️ Activar Música';
+        }
+
+        #musicaBtn:not(.paused)::before {
+            content: '🎵 ⏸️ Pausar Música';
+        }
+
+        /* Ocultar el texto por defecto para que aparezca con la clase */
+        #musicaBtn.paused:not(:hover)::before {
+            content: '🎵'; /* Solo el icono cuando está pausada y no se hace hover */
+        }
+        #musicaBtn.paused:hover::before {
+            content: '🎵 ▶️ Activar Música';
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>¡Te Amo Muchote!</h1>
+        <div class="nombre-central">Johana</div>
+    </div>
+
+    <audio id="musicaFondo" loop>
+        <source src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <button id="musicaBtn" class="paused"></button>
+
+    <script>
+        // Función para crear partículas (estrellas) en el fondo
+        function crearParticulas() {
+            const numParticulas = 80; // Número de estrellas
+            for (let i = 0; i < numParticulas; i++) {
+                let p = document.createElement('div');
+                p.className = 'particula';
+                let size = Math.random() * 2 + 1 + 'px'; // Tamaño entre 1px y 3px
+                p.style.width = size;
+                p.style.height = size;
+                p.style.left = Math.random() * 100 + 'vw'; // Posición aleatoria en el ancho
+                p.style.animationDuration = (Math.random() * 5 + 5) + 's'; // Duración de la animación (velocidad)
+                p.style.animationDelay = (Math.random() * 5) + 's'; // Retraso para que aparezcan escalonadamente
+                document.body.appendChild(p);
+            }
+        }
+
+        // Función para crear corazones flotantes
+        function crearCorazones() {
+            const numCorazones = 20; // Número de corazones
+            for (let i = 0; i < numCorazones; i++) {
+                let c = document.createElement('div');
+                c.className = 'corazon-flotante';
+                c.innerHTML = '❤️'; // El emoji de corazón
+                let size = Math.random() * 1.5 + 0.8 + 'em'; // Tamaño entre 0.8em y 2.3em
+                c.style.fontSize = size;
+                c.style.left = Math.random() * 100 + 'vw';
+                c.style.animationDuration = (Math.random() * 8 + 7) + 's'; // Velocidad de subida
+                c.style.animationDelay = (Math.random() * 7) + 's'; // Retraso
+                document.body.appendChild(c);
+            }
+        }
+
+        // Llama a las funciones para generar las partículas y corazones
+        crearParticulas();
+        crearCorazones();
+
+
+        // Lógica del botón de música
+        const musicaBtn = document.getElementById('musicaBtn');
+        const musicaFondo = document.getElementById('musicaFondo');
+        let isPlaying = false;
+
+        musicaBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                musicaFondo.pause();
+                musicaBtn.classList.add('paused');
+            } else {
+                musicaFondo.play();
+                musicaBtn.classList.remove('paused');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Auto-play con interacción (muchos navegadores lo requieren)
+        // Intentar reproducir automáticamente después de la primera interacción del usuario
+        document.body.addEventListener('click', () => {
+            if (!isPlaying) {
+                musicaFondo.play().then(() => {
+                    isPlaying = true;
+                    musicaBtn.classList.remove('paused');
+                }).catch(error => {
+                    // console.log("La reproducción automática fue bloqueada:", error);
+                    // Mostrar el botón de play si no se pudo reproducir automáticamente
+                    musicaBtn.classList.add('paused');
+                });
+            }
+        }, { once: true }); // Solo se activa una vez para evitar múltiples intentos de auto-play
+    </script>
+
+</body>
+  </html>
+  
