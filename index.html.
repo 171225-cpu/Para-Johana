@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para mi amada Johana ❤️</title>
+    <title>Para mi yeye helmosha 💞</title>
     <style>
         /* Estilos generales del cuerpo */
         body {
@@ -27,7 +27,7 @@
             position: relative;
         }
 
-        /* Título superior "Te Amo Muchote" */
+        /* Título superior "Te Amo Mushoooo" */
         h1 {
             font-size: 2em;
             color: #ff3399; /* Rosa vibrante */
@@ -164,7 +164,7 @@
 <body>
 
     <div class="contenedor">
-        <h1>¡Te Amo Muchote!</h1>
+        <h1>¡Te Amo Mushoooo!</h1>
         <div class="nombre-central">Johana</div>
     </div>
 
@@ -198,7 +198,7 @@
             for (let i = 0; i < numCorazones; i++) {
                 let c = document.createElement('div');
                 c.className = 'corazon-flotante';
-                c.innerHTML = '❤️'; // El emoji de corazón
+                c.innerHTML = '💞'; // El emoji de corazón
                 let size = Math.random() * 1.5 + 0.8 + 'em'; // Tamaño entre 0.8em y 2.3em
                 c.style.fontSize = size;
                 c.style.left = Math.random() * 100 + 'vw';
